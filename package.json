@@ -23,5 +23,11 @@
         "vue": "^2.5.17",
         "vue-loader": "^15.9.5",
         "vue-template-compiler": "^2.6.10"
+    },
+    "dependencies": {
+        "vue-loading-overlay": "^3.4.2",
+        "vue-the-mask": "^0.11.1",
+        "vue-ui-preloader": "^1.1.3",
+        "vuejs-loading-plugin": "^1.0.51"
     }
 }

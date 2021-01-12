@@ -23,7 +23,6 @@ class GrupoController extends Controller
     public function index(Request $request) //adquirir qtd paginação no corpo via get
     {
         //$request->qtdpaginate; quantidade de registros indexada por paginação
-        //$data = ['data' => GrupoResource::collection(Grupo::paginate($qtdindex))];
         $data = ['data' => GrupoResource::collection(Grupo::where('nome', 'LIKE' , '%'.$request->nome.'%')->paginate($request->qtdpaginate))];
         
         return response()->json($data);

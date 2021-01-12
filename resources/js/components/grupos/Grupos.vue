@@ -1,5 +1,5 @@
 <template> 
-<div class="loader" >
+<div class="" >
     <div class="container col-md-12" v-if="loading === false">
 
         <div class="row justify-content-center">
@@ -51,7 +51,7 @@
                                 <label for="name" class="text-md-right mx-0 mr-1 px-0 my-0 py-1">CPF</label>
 
                                 <div class="col-md mx-0 mr-3 px-0 my-0 py-0">
-                                    <input v-model="novapessoa.cpf"   type="" class="form-control" name="name" value="" required autocomplete="" autofocus>
+                                    <the-mask v-model="novapessoa.cpf" class="form-control" required :mask="['###.###.###-##']" autofocus />
                                     
                                 </div>
                             </div>
@@ -109,7 +109,7 @@
                                     <label for="name" class="text-md-right mx-0 mr-1 px-0 my-0 py-1">CEP</label>
 
                                     <div class="col-md mx-0 mr-3 px-0 my-0 py-0">
-                                        <input v-model="novapessoa.cep"   type="" class="form-control" name="name" value="" required autocomplete="" autofocus>
+                                        <the-mask v-model="novapessoa.cep" class="form-control" required :mask="['#####-###']" autofocus />
                                         
                                     </div>
                                 </div>
@@ -167,7 +167,7 @@
                                     <label for="name" class="text-md-right mx-0 mr-1 px-0 my-0 py-1">telefone</label>
 
                                     <div class="col-md mx-0 mr-3 px-0 my-0 py-0">
-                                        <input v-model="novapessoa.telefone"   type="" class="form-control" name="name" value="" required autocomplete="" autofocus>
+                                        <the-mask v-model="novapessoa.telefone" class="form-control" required :mask="['(##) #####-####']" autofocus />
                                         
                                     </div>
                                 </div>
@@ -175,7 +175,7 @@
                                     <label for="name" class="text-md-right mx-0 mr-1 px-0 my-0 py-1">telefone2</label>
 
                                     <div class="col-md mx-0 mr-3 px-0 my-0 py-0">
-                                        <input v-model="novapessoa.telefone2"   type="" class="form-control" name="name" value="" required autocomplete="" autofocus>
+                                        <the-mask v-model="novapessoa.telefone2" class="form-control" required :mask="['(##) #####-####']" autofocus />
                                         
                                     </div>
                                 </div>
@@ -190,28 +190,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </div>
         </div>
         <br>
@@ -220,7 +198,6 @@
 
         <div class="row justify-content-center">
             <div class="col-md-3">
-                <!-- Pesquisar Grupos-->
                 <div class="card">
                     <div class="card-header">
                         Pesquisar Grupos
@@ -287,13 +264,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
-
             </div>
 
             <div class="col-md">
@@ -325,21 +295,7 @@
                 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
                 <br>
-
-
-
                 <!-- Listar Pessoas por Grupo-->
                 <div class="row justify-content-center">
                     <div class="col-md">
@@ -364,7 +320,7 @@
                                                 <label for="name" class="text-md-right mx-0 mr-1 px-0 my-0 py-1">CPF</label>
 
                                                 <div class="col-md mx-0 mr-3 px-0 my-0 py-0">
-                                                    <input v-model="pessoa.cpf"   type="" class="form-control" name="name" value="" required autocomplete="" autofocus>
+                                                    <the-mask v-model="pessoa.cpf" class="form-control" required :mask="['###.###.###-##']" autofocus />
                                                     
                                                 </div>
                                             </div>
@@ -422,8 +378,7 @@
                                                     <label for="name" class="text-md-right mx-0 mr-1 px-0 my-0 py-1">CEP</label>
 
                                                     <div class="col-md mx-0 mr-3 px-0 my-0 py-0">
-                                                        <input v-model="pessoa.cep"   type="" class="form-control" name="name" value="" required autocomplete="" autofocus>
-                                                        
+                                                        <the-mask v-model="pessoa.cep" class="form-control" required :mask="['#####-###']" autofocus />
                                                     </div>
                                                 </div>
                                                 <div class=" row col-md mx-0 px-0 my-0 py-0">
@@ -480,7 +435,8 @@
                                                     <label for="name" class="text-md-right mx-0 mr-1 px-0 my-0 py-1">telefone</label>
 
                                                     <div class="col-md mx-0 mr-3 px-0 my-0 py-0">
-                                                        <input v-model="pessoa.telefone"   type="" class="form-control" name="name" value="" required autocomplete="" autofocus>
+                                                        <the-mask v-model="pessoa.telefone" class="form-control" required :mask="['(##) #####-####']" autofocus />
+                                                        
                                                         
                                                     </div>
                                                 </div>
@@ -488,7 +444,7 @@
                                                     <label for="name" class="text-md-right mx-0 mr-1 px-0 my-0 py-1">telefone2</label>
 
                                                     <div class="col-md mx-0 mr-3 px-0 my-0 py-0">
-                                                        <input v-model="pessoa.telefone2"   type="" class="form-control" name="name" value="" required autocomplete="" autofocus>
+                                                        <the-mask v-model="pessoa.telefone2" class="form-control" required :mask="['(##) #####-####']" autofocus />
                                                         
                                                     </div>
                                                 </div>
@@ -505,63 +461,19 @@
                                 </div>
                                 <br>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                
             </div>
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
-
-        
-
-        
-
-
-
-
-
-
     </div>    
 </div>
 </template>
 
 <script>
+    import {TheMask} from 'vue-the-mask'
     export default {
+        components: {TheMask},
         data: function(){
             return {
                 loading: true,
@@ -608,7 +520,7 @@
             },
 
             loadGrupos: function(){
-                axios.get('http://testeassysdigital.work/api/grupos')
+                axios.get('/api/grupos')
                     .then((response) => {
                         this.grupos = response.data.data;
                         this.loading = false;
@@ -621,7 +533,7 @@
 
 
             searchGrupos: function(){
-                axios.get('http://testeassysdigital.work/api/grupos?' + 'nome=' + this.grupofind + '&qtdpaginate=' + this.grupopag)
+                axios.get('/api/grupos?' + 'nome=' + this.grupofind + '&qtdpaginate=' + this.grupopag)
                     .then((response) => {
                         this.grupos = response.data.data;
                         //console.log(response.data.data);//
@@ -634,7 +546,7 @@
 
 
             deleteGrupo: function(id, index){
-                axios.delete('http://testeassysdigital.work/api/grupos', {data: {'id': id}})
+                axios.delete('/api/grupos', {data: {'id': id}})
                     .then((response) => {
                         //console.log(id, index)//
                         //console.log(response.data.data.msg)//
@@ -649,7 +561,7 @@
 
 
             editGrupo: function(grupo, index){
-                axios.put('http://testeassysdigital.work/api/grupos', {'id': grupo.id, 'nome': grupo.nome, 'descricao': grupo.descricao})
+                axios.put('/api/grupos', {'id': grupo.id, 'nome': grupo.nome, 'descricao': grupo.descricao})
                     .then((response) => {
                         //console.log(grupo.id, index)//
                         //console.log(response.data)//
@@ -673,7 +585,7 @@
 
 
             addNovoGrupo: function(){
-                axios.post('http://testeassysdigital.work/api/grupos', {'nome': this.novogrupo.nome, 'descricao': this.novogrupo.descricao})
+                axios.post('/api/grupos', {'nome': this.novogrupo.nome, 'descricao': this.novogrupo.descricao})
                     .then((response) => {
                         //console.log(this.novogrupo.nome, this.novogrupo.descricao)//
                         //console.log(response.data.data)//
@@ -702,7 +614,7 @@
 
 
             loadPessoas: function(grupo){
-                axios.get('http://testeassysdigital.work/api/pessoas?' + 'grupo_id=' + grupo.id)
+                axios.get('/api/pessoas?' + 'grupo_id=' + grupo.id)
                     .then((response) => {
                         this.pessoas = response.data.data;
                         this.scrollToTop();
@@ -716,7 +628,7 @@
             },
 
             mostrartodosPessoas: function(grupo_id){
-                axios.get('http://testeassysdigital.work/api/pessoas?' + 'grupo_id=' + grupo_id)
+                axios.get('/api/pessoas?' + 'grupo_id=' + grupo_id)
                     .then((response) => {
                         this.pessoas = response.data.data;
                         //console.log(response.data.data)//
@@ -728,7 +640,7 @@
 
 
             deletePessoa: function(id, index){
-                axios.delete('http://testeassysdigital.work/api/pessoas', {data: {'id': id}})
+                axios.delete('/api/pessoas', {data: {'id': id}})
                     .then((response) => {
                         //console.log(id, index)//
                         //console.log(response.data.data.msg)//
@@ -743,7 +655,7 @@
 
 
             editPessoa: function(pessoa){
-                axios.put('http://testeassysdigital.work/api/pessoas', pessoa)
+                axios.put('/api/pessoas', pessoa)
                     .then((response) => {
                         console.log(pessoa)//
                         console.log(response.data)//
@@ -767,7 +679,7 @@
             },
 
             addNovaPessoa: function(){
-                axios.post('http://testeassysdigital.work/api/pessoas', this.novapessoa)
+                axios.post('/api/pessoas', this.novapessoa)
                     .then((response) => {
                         //console.log(response.data.data);//
                         if (response.data.data.msg){
@@ -790,7 +702,7 @@
 
 
             searchPessoas: function(){
-                axios.get('http://testeassysdigital.work/api/pessoas?' + 'nome=' + this.pessoafind + '&grupo_id=' + this.novapessoa.grupo_id + '&qtdpaginate=' + this.pessoapag)
+                axios.get('/api/pessoas?' + 'nome=' + this.pessoafind + '&grupo_id=' + this.novapessoa.grupo_id + '&qtdpaginate=' + this.pessoapag)
                     .then((response) => {
                         this.pessoas = response.data.data;
                     })
@@ -798,23 +710,6 @@
                         console.log(error);
                     })
             },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         }

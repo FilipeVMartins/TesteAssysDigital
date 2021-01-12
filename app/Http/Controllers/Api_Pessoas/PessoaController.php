@@ -45,18 +45,18 @@ class PessoaController extends Controller
     {
         try {
             $validator = Validator::make($request->all(), [
-                'nome' => ['required', 'unique:pessoas', 'max:65535', 'alpha'], //tamanho de text no MySql
+                'nome' => ['required', 'unique:pessoas', 'max:65535'], //tamanho de text no MySql
                 'cpf' => ['required', 'unique:pessoas', 'digits_between:1,14'], //era interessante reconhecer como numeric nos devidos campos para evitar entradas erradas por ¹erros de carregamento nas validações e máscaras do front-end ou ²requests propositais mal-intencionadas. O que poderia levar a problemas com futuros códigos SQL pela despadronização da base.
                 'cep' => ['required', 'digits_between:1,20'],
                 'uf' => ['required', 'max:45', 'alpha'],
-                'cidade' => ['required', 'max:65535', 'alpha'],
-                'bairro' => ['required', 'max:65535', 'alpha'],
+                'cidade' => ['required', 'max:65535'],
+                'bairro' => ['required', 'max:65535'],
                 'logradouro' => ['required', 'max:65535'],
                 'numero' => ['required','digits_between:1,65535'], 
                 'complemento' => ['nullable', 'max:65535'],
                 'telefone' => ['required', 'digits_between:1,45'],
                 'telefone2' => ['required', 'digits_between:1,45'],
-                'nacionalidade' => ['required', 'max:45', 'alpha'],
+                'nacionalidade' => ['required', 'max:45'],
                 'data_nascimento' => ['required', 'date'],
                 'grupo_id' => ['required', 'integer'], //This validation rule does not verify that the input is of the "integer" variable type, only that the input is a string or numeric value that contains an integer.
             ]);
@@ -97,18 +97,18 @@ class PessoaController extends Controller
             $editpessoa = Pessoa::findOrFail($request->id);
             $validator = Validator::make($request->all(), [
                 'id' => ['required', 'integer'],
-                'nome' => ['exclude_if:nome,'.$editpessoa->nome,'required', 'unique:pessoas', 'max:65535', 'alpha'], //tamanho de text no MySql
+                'nome' => ['exclude_if:nome,'.$editpessoa->nome,'required', 'unique:pessoas', 'max:65535'], //tamanho de text no MySql
                 'cpf' => ['exclude_if:cpf,'.$editpessoa->cpf,'required', 'unique:pessoas', 'digits_between:1,14'], //era interessante reconhecer como numeric nos devidos campos para evitar entradas erradas por ¹erros de carregamento nas validações e máscaras do front-end ou ²requests propositais mal-intencionadas de usuários. O que poderia levar a problemas com futuros códigos SQL pela despadronização da base.
                 'cep' => ['required', 'digits_between:1,20'],
                 'uf' => ['required', 'max:45', 'alpha'],
-                'cidade' => ['required', 'max:65535', 'alpha'],
-                'bairro' => ['required', 'max:65535', 'alpha'],
+                'cidade' => ['required', 'max:65535'],
+                'bairro' => ['required', 'max:65535'],
                 'logradouro' => ['required', 'max:65535'],
                 'numero' => ['required','digits_between:1,65535'], 
                 'complemento' => ['nullable', 'max:65535'],
                 'telefone' => ['required', 'digits_between:1,45'],
                 'telefone2' => ['required', 'digits_between:1,45'],
-                'nacionalidade' => ['required', 'max:45', 'alpha'],
+                'nacionalidade' => ['required', 'max:45'],
                 'data_nascimento' => ['required', 'date'],
                 'grupo_id' => ['required', 'integer'], //This validation rule does not verify that the input is of the "integer" variable type, only that the input is a string or numeric value that contains an integer.
             ]);
